@@ -76,7 +76,7 @@ Usage without installation
 
 Windows
 ^^^^^^^
-The Windows distribution does not require any special installation steps and is usually run from wherever the exectuable is copied to. However, there is a install script that will place it in Local AppData and add to user's PATH for a more persistent installation.
+The Windows distribution does not require any special installation steps and is usually run from wherever the executable is copied to. However, there is a install script that will place it in Local AppData and add to user's PATH for a more persistent installation.
 
  We recommend verifying that the executable works before using it in a deployed environment. There are some special considorations regarding usage, refer to :ref:`windows-usage` for further details.
 

@@ -4,7 +4,7 @@
 
 metadata:
   name: "8650_config"
-  description: "ION8650 PEAT configuration to pick pulling Log, Feature Manger or Both"
+  description: "ION8650 PEAT configuration to pick pulling Log, Feature Manager or Both"
   author: "mstroble"
   created: "April 14th, 2025"
   updated: "July 29th, 2025"

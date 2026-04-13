@@ -5,7 +5,7 @@
     // Created By: Matthew Stroble
 
     // In the root of the peat folder create a folder called .vscode
-    // Place this file in that folder and fill in the following fileds.
+    // Place this file in that folder and fill in the following fields.
     // Replace the value in "name": This will be the name that shows in the drop down.
     // Replace "module name" with the module you call on the CLI
     // If using config, put the path in the place of Path/to/config
