@@ -1,0 +1,33 @@
+metadata:
+  name: "mysql-local"
+  description: "Pull from a locally running MySQL/MariaDB instance"
+
+additional_modules: []
+debug: 0
+out_dir: &OUTDIR "./peat_results/"
+run_dir: &RUNDIR !JOIN [*OUTDIR, "default_run_dir/"]
+device_dir: !JOIN [*RUNDIR, "devices/"]
+summaries_dir: !JOIN [*RUNDIR, "summaries/"]
+elastic_dir: !JOIN [*RUNDIR, "elastic_data/"]
+meta_dir: !JOIN [*RUNDIR, "peat_metadata/"]
+log_dir: !JOIN [*RUNDIR, "logs/"]
+temp_dir: !JOIN [*RUNDIR, "temp/"]
+formatted_output: true
+elastic_server: null
+
+hosts:
+  - label: "local-mysql"
+    identifiers:
+      ip: "127.0.0.1"
+    peat_module: "MySQLServer"
+    options:
+      mysql:
+        port: 3306
+        timeout: 10.0
+        pull_schema: true
+        pull_users: true
+        pull_variables: true
+        exclude_system_dbs: true
+      credentials:
+        user: "root"
+        pass: "testpass"

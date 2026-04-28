@@ -12,3 +12,4 @@ from peat.modules.siemens import Siprotec
 from peat.modules.uefi import UEFI
 from peat.modules.windows import WindowsCE
 from peat.modules.woodward import WDW2301E, Easygen3500XT, MicroNet
+from peat.modules.mysql import MySQLServer
