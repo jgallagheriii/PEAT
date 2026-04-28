@@ -5,7 +5,7 @@
 groups = ["default", "dev", "docs", "exe", "lint", "test"]
 strategy = []
 lock_version = "4.5.0"
-content_hash = "sha256:a22c6378021bdeb1a1c8434d83942ae846eb1afd210e523411aee345ba66f26d"
+content_hash = "sha256:4f379386fb19c3e81c88e4da33b12f36f362edbaa7854b0739c1362aa2f19953"
 
 [[metadata.targets]]
 requires_python = ">=3.11,<3.14"
@@ -1626,6 +1626,16 @@ dependencies = [
 files = [
     {file = "pylint-4.0.4-py3-none-any.whl", hash = "sha256:63e06a37d5922555ee2c20963eb42559918c20bd2b21244e4ef426e7c43b92e0"},
     {file = "pylint-4.0.4.tar.gz", hash = "sha256:d9b71674e19b1c36d79265b5887bf8e55278cbe236c9e95d22dc82cf044fdbd2"},
+]
+
+[[package]]
+name = "pymysql"
+version = "1.1.2"
+requires_python = ">=3.8"
+summary = "Pure Python MySQL Driver"
+files = [
+    {file = "pymysql-1.1.2-py3-none-any.whl", hash = "sha256:e6b1d89711dd51f8f74b1631fe08f039e7d76cf67a42a323d3178f0f25762ed9"},
+    {file = "pymysql-1.1.2.tar.gz", hash = "sha256:4961d3e165614ae65014e361811a724e2044ad3ea3739de9903ae7c21f539f03"},
 ]
 
 [[package]]

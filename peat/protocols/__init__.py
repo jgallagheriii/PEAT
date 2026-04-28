@@ -12,6 +12,7 @@ from .common import *
 from .discovery import *
 from .ftp import FTP
 from .http import HTTP
+from .mysql import MySQL
 from .interfaces import *
 from .ip import *
 from .serial import *

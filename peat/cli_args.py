@@ -848,6 +848,15 @@ def build_argument_parser(version: str = "0.0.0") -> argparse.ArgumentParser:
         'of a PEAT module, device vendor, device type (e.g. "plc"), '
         "or other aliases. This can be a single string or a space-separated list of strings.",
     )
+    pull_parser.add_argument(
+        "--skip-scan",
+        action="store_true",
+        default=None,
+        dest="pull_skip_scan",
+        help="Skip scanning and verification of hosts before pulling, "
+        "and assume all hosts are online and valid devices. NOTE: "
+        "this requires a single device type to be specified.",
+    )
 
     # !! NOTE !!
     # input_source is duplicated between parse and push because the order they are
@@ -933,7 +942,8 @@ def build_argument_parser(version: str = "0.0.0") -> argparse.ArgumentParser:
             "and other information sources, such as imported scan "
             "results.",
         )
-        host_group = subp.add_mutually_exclusive_group(required=True)
+        # pull can omit host args when a YAML config with hosts is provided
+        host_group = subp.add_mutually_exclusive_group(required=subp is not pull_parser)
         host_group.add_argument(
             "-i",
             "--ip",

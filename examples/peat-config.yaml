@@ -744,6 +744,13 @@ device_options:
   servlink_serial:
     timeout: 5.0
 
+  # MySQL/MariaDB protocol
+  #
+  # "mysql" is used by the following modules: MySQLServer
+  mysql:
+    port: 3306
+    timeout: 5.0
+
   # PostgreSQL protocol (used for communicating with PostgreSQL databases)
   #
   # "postgres" is used by the following modules: SELRTAC
