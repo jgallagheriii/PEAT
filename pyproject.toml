@@ -203,7 +203,7 @@ dependencies = [
     "psycopg2-binary==2.9.10",
 
     # MySQL/MariaDB database interaction (pure Python, no binary build required)
-    # Required for: MySQLServer
+    # Required for: MySQL protocol
     "PyMySQL>=1.1.0",
 
     # Library to load kernel modules for PEAT Pillage
