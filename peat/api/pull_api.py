@@ -40,7 +40,7 @@ def pull(
 
         # Build per-IP module map from YAML config hosts
         host_module_map: dict = {}
-        for host in (config.HOSTS or []):
+        for host in config.HOSTS or []:
             ip = host.get("identifiers", {}).get("ip")
             peat_module = host.get("peat_module")
             if ip and peat_module:

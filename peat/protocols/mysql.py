@@ -53,10 +53,10 @@ class MySQL:
 
         The packet layout (Protocol v10, used since MySQL 4.1):
 
-        - bytes 0–2: payload length (little-endian uint24)
+        - bytes 0-2: payload length (little-endian uint24)
         - byte  3:   sequence number (``0x00``)
         - byte  4:   protocol version (``0x0a`` = 10)
-        - bytes 5–N: server version string, null-terminated
+        - bytes 5-N: server version string, null-terminated
 
         Args:
             ip: Server IP address or hostname.

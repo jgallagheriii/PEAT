@@ -259,7 +259,9 @@ def oneshot_main(args: dict[str, Any]) -> bool:
             return True
 
         elif args["func"] == "pull":
-            pull_results = pull(targets, comm_type, sorted_device_types, skip_scan=config.PULL_SKIP_SCAN)
+            pull_results = pull(
+                targets, comm_type, sorted_device_types, skip_scan=config.PULL_SKIP_SCAN
+            )
 
             if not pull_results:
                 return False

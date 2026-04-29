@@ -1,13 +1,11 @@
-import socket
-from unittest.mock import MagicMock, patch
-
-import pytest
+from unittest.mock import MagicMock
 
 from peat.protocols.mysql import MySQL
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _make_greeting(version: bytes) -> bytes:
     """Build a minimal MySQL Initial Handshake Packet for the given version string."""
@@ -25,6 +23,7 @@ TOO_SHORT = b"\x00\x00"
 # ---------------------------------------------------------------------------
 # MySQL.read_greeting
 # ---------------------------------------------------------------------------
+
 
 class TestReadGreeting:
     def _mock_socket(self, data: bytes):
@@ -52,7 +51,7 @@ class TestReadGreeting:
 
     def test_connection_error_returns_none(self, mocker):
         sock = MagicMock()
-        sock.connect.side_effect = socket.timeout("timed out")
+        sock.connect.side_effect = TimeoutError("timed out")
         sock.__enter__ = lambda s: s
         sock.__exit__ = MagicMock(return_value=False)
         mocker.patch("socket.socket", return_value=sock)
@@ -69,6 +68,7 @@ class TestReadGreeting:
 # ---------------------------------------------------------------------------
 # MySQL.__init__ and properties
 # ---------------------------------------------------------------------------
+
 
 class TestMySQLInit:
     def test_defaults(self):
@@ -94,6 +94,7 @@ class TestMySQLInit:
 # ---------------------------------------------------------------------------
 # MySQL.connect / disconnect
 # ---------------------------------------------------------------------------
+
 
 class TestMySQLConnect:
     def _mock_pymysql(self, mocker, server_info="8.0.32"):
@@ -147,6 +148,7 @@ class TestMySQLConnect:
 # ---------------------------------------------------------------------------
 # MySQL.query and helpers
 # ---------------------------------------------------------------------------
+
 
 class TestMySQLQuery:
     def _connected_mysql(self, mocker, rows=None):
@@ -227,6 +229,7 @@ class TestMySQLQuery:
 # ---------------------------------------------------------------------------
 # Hook methods
 # ---------------------------------------------------------------------------
+
 
 class TestMySQLHooks:
     def test_on_connected_default_is_noop(self):
