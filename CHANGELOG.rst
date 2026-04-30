@@ -30,6 +30,11 @@ TBD
 Added
 ^^^^^
 
+- ``peat/protocols/mysql.py``: New ``MySQL`` protocol class wrapping PyMySQL. Provides unauthenticated server fingerprinting via the MySQL initial handshake packet (``read_greeting``), authenticated connection and query helpers (``get_databases``, ``get_tables``, ``get_table_row_count``, ``get_users``, ``get_grants``, ``get_global_variables``, ``get_process_list``), and subclass hooks (``on_connected``, ``enumerate``) for device-specific extensions.
+- ``peat pull --skip-scan``: New CLI flag that bypasses the scan phase and pulls directly from hosts defined in the config file. Per-host ``peat_module`` mappings in the ``hosts`` list are respected; a single ``-d`` device type can be used as a fallback. The ``-i``/``-f`` argument is no longer required when a config file with a ``hosts`` list is supplied.
+- ``pull_skip_scan`` setting added to ``Configuration`` and both example config files.
+- PyMySQL (``>=1.1.0``) added as a project dependency.
+
 Changed
 ^^^^^^^
 
