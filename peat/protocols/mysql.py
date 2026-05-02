@@ -5,6 +5,8 @@ from __future__ import annotations
 import socket
 from typing import Any
 
+import pymysql
+import pymysql.cursors
 from loguru import logger as log
 
 
@@ -118,8 +120,6 @@ class MySQL:
             True if the connection succeeded, False otherwise.
         """
         try:
-            import pymysql
-
             self._conn = pymysql.connect(
                 host=self.ip,
                 port=self.port,
@@ -168,8 +168,6 @@ class MySQL:
         if self._conn is None:
             return []
         try:
-            import pymysql.cursors
-
             with self._conn.cursor(pymysql.cursors.DictCursor) as cursor:
                 cursor.execute(sql, args)
                 return list(cursor.fetchall())
