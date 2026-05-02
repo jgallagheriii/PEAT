@@ -237,6 +237,11 @@ peat pull -d clx -i 192.0.2.0/24 -c peat-config.yaml
 # Useful for verifying configuration options before pulling the
 # metaphorical trigger on a pull.
 peat pull --dry-run -d clx -i 192.0.2.0/24
+
+# Skip the scan phase and pull directly from hosts defined in a config file.
+# Hosts must have a peat_module specified in the config. The -i argument is
+# not required when a config file with a hosts list is supplied.
+peat pull --skip-scan -c peat-config.yaml
 """  # End pull examples
 
 
