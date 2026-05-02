@@ -161,6 +161,16 @@ class Configuration(SettingsManager):
        (the ``-d`` argument on the :term:`CLI`)
     """
 
+    PULL_SKIP_SCAN: bool = False
+    """
+    Skip scanning and verification of hosts before pulling and assume
+    all hosts are online and valid devices.
+
+    .. note::
+       This requires a single device type to be specified
+       (the ``-d`` argument on the :term:`CLI`)
+    """
+
     SCAN_SWEEP: bool = False
     """
     Simple host up/down check (equivalent to ``nmap -Pn <hosts>``).

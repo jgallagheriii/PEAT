@@ -131,6 +131,10 @@ syn_port: 80
 # device type to be specified.
 push_skip_scan: false
 
+# Skip scanning and pull directly from hosts defined in the config file.
+# Requires hosts to be defined with a peat_module in the config.
+pull_skip_scan: false
+
 # Simple host up/down check (equivalent to "nmap -Pn <hosts>").
 # If serial ports are targeted, this will enumerate the active
 # serial ports on the host.
@@ -742,6 +746,13 @@ device_options:
   #
   # "servlink_serial" is used by the following modules: Easygen3500XT, WDW2301E
   servlink_serial:
+    timeout: 5.0
+
+  # MySQL/MariaDB protocol
+  #
+  # "mysql" is not currently used by anyone, but is left here for future compatibility and documentation/reference.
+  mysql:
+    port: 3306
     timeout: 5.0
 
   # PostgreSQL protocol (used for communicating with PostgreSQL databases)
